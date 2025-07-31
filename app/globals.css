@@ -1,0 +1,146 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  html {
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+  
+  body {
+    @apply bg-gray-50 text-gray-800;
+    line-height: 1.6;
+  }
+}
+
+@layer components {
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+  
+  .gradient-secondary {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  }
+  
+  .gradient-success {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  }
+  
+  .gradient-warning {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  }
+  
+  /* Card styles */
+  .card {
+    @apply bg-white rounded-2xl p-6 shadow-medium border border-gray-100 transition-all duration-250;
+  }
+  
+  .card:hover {
+    @apply shadow-large -translate-y-1;
+  }
+  
+  /* Button styles */
+  .btn {
+    @apply px-6 py-3 rounded-xl font-semibold text-sm transition-all duration-150 inline-flex items-center gap-2 cursor-pointer;
+  }
+  
+  .btn-primary {
+    @apply gradient-primary text-white;
+  }
+  
+  .btn-primary:hover {
+    @apply -translate-y-0.5 shadow-large;
+  }
+  
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700;
+  }
+  
+  .btn-secondary:hover {
+    @apply bg-gray-200;
+  }
+  
+  .btn-success {
+    @apply gradient-success text-white;
+  }
+  
+  /* Form styles */
+  .form-input {
+    @apply w-full px-4 py-3 border border-gray-300 rounded-xl text-base transition-all duration-150 focus:outline-none focus:border-primary-500 focus:ring-4 focus:ring-primary-100;
+  }
+  
+  /* Progress bar */
+  .progress-bar {
+    @apply w-full h-2 bg-gray-200 rounded-sm overflow-hidden;
+  }
+  
+  .progress-fill {
+    @apply h-full gradient-success rounded-sm transition-all duration-300;
+  }
+  
+  /* Exercise item */
+  .exercise-item {
+    @apply flex items-center p-4 bg-gray-50 rounded-xl mb-3 border border-gray-100 transition-all duration-150;
+  }
+  
+  .exercise-item:hover {
+    @apply bg-gray-100 translate-x-1;
+  }
+  
+  .exercise-icon {
+    @apply w-12 h-12 rounded-xl gradient-primary flex items-center justify-center text-white font-semibold mr-4;
+  }
+  
+  .exercise-status {
+    @apply w-6 h-6 rounded-full border-2 border-gray-300 cursor-pointer transition-all duration-150;
+  }
+  
+  .exercise-status.completed {
+    @apply gradient-success border-transparent;
+  }
+  
+  /* Navigation */
+  .nav-item {
+    @apply flex flex-col items-center gap-1 text-gray-500 cursor-pointer transition-all duration-150 p-2 rounded-md;
+  }
+  
+  .nav-item.active {
+    @apply text-gray-800 bg-gray-100;
+  }
+  
+  .nav-item:hover {
+    @apply text-gray-700;
+  }
+  
+  /* Stats */
+  .stat-card {
+    @apply bg-white p-4 rounded-xl text-center shadow-soft border border-gray-100;
+  }
+  
+  .stat-value {
+    @apply text-2xl font-bold text-gray-800 mb-1;
+  }
+  
+  .stat-label {
+    @apply text-sm text-gray-500;
+  }
+  
+  /* Header with curved bottom */
+  .header-curved {
+    @apply relative;
+  }
+  
+  .header-curved::after {
+    content: '';
+    @apply absolute -bottom-5 left-0 right-0 h-10 bg-white rounded-t-full;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+} 
